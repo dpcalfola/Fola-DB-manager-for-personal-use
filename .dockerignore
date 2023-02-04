@@ -1,0 +1,20 @@
+# Git
+.git
+.gitignore
+
+# Docker
+.docker
+
+# Python
+__pycache__/
+Django_app/__pycache__
+Django_app/*/__pycache__
+Django_app/*/*/__pycache__
+Django_app/*/*/*/__pycache__
+
+# Environment
+.env/
+env/
+.venv/
+venv/
+

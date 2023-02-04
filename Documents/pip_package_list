@@ -1,0 +1,23 @@
+# Requirements
+
+    Django>=4.1.0,<4.2.0
+    -> Web framework
+
+    djangorestframework>=3.12.0,<3.13.0
+    -> Web API framework
+
+    psycopg2>=2.9.0,<3.0.0
+    -> PostgreSQL database adapter
+
+    drf-spectacular>=0.24.0,<0.25.0
+    -> API documentation generator
+
+    pytz>=2021.3.0,<2022.0.0
+    -> Timezone definitions
+
+
+
+# Development packages
+
+    flake8>=6.00,<7.0
+    -> Code style checker
