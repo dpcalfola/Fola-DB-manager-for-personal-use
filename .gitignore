@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# Local tool and os generated files
+.idea/
+.vscode/
+DS_Store
+
+# Personal use files
+personal_files/
