@@ -47,4 +47,22 @@
    > Before make commit, Hide the secret key clearly   
 
 
-### 7
+### 7. Main DB(1st DB) setup - postgres
+   * Make postgres service in docker-compose
+   * Hide the DB information
+   * Set the DB information in settings.py
+   >CAUTION:
+   > 
+   >If you struggle to set the DB information in settings.py,<br>
+   >Try to delete Docker volume and restart docker-compose
+   >
+   >Because the DB information is saved in Docker volume at the first time<br>
+   >And then it is not changed even if you change the DB information in env data
+
+   * Make migrations
+   ```shell
+    docker-compose run --rm app sh -c "python manage.py makemigrations"
+   ```
+   ```shell
+     docker-compose run --rm app sh -c "python manage.py migrate"
+   ```

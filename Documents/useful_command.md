@@ -20,4 +20,9 @@
    ```shell
    docker-compose run --rm app sh -c "pwd"
    ```
-   
+
+5. Remove docker volume
+   ```shell
+   docker volume rm fola-db-manager-for-personal-use_fola-db-postgres-data
+
+   ```

@@ -11,4 +11,26 @@ services:
     volumes:
       - ./django_app:/django_app
     command: >
-      sh -c "python manage.py runserver 0.0.0.0:8000"
+      sh -c "echo ${TEST_VARIABLE} && python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - POSTGRES_DB_HOST=db-1-postgres
+      - POSTGRES_DB_NAME=${POSTGRES_DB_NAME}
+      - POSTGRES_DB_USER=${POSTGRES_DB_USER}
+      - POSTGRES_DB_PASSWORD=${POSTGRES_DB_PASSWORD}
+    depends_on:
+      - db-1-postgres
+
+  db-1-postgres:
+    image: postgres:14.6-alpine
+    ports:
+      - "${POSTGRES_DB_PORT}:5432"
+    volumes:
+      - fola-db-postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB_NAME}
+      - POSTGRES_USER=${POSTGRES_DB_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_DB_PASSWORD}
+
+
+volumes:
+  fola-db-postgres-data:
