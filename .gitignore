@@ -135,7 +135,7 @@ dmypy.json
 # Local tool and os generated files
 .idea/
 .vscode/
-DS_Store
+.DS_Store
 
 # Personal use files
 personal_files/
