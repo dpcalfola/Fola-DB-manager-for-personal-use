@@ -3,6 +3,8 @@ FROM python:3.10.9-alpine3.17
 MAINTAINER FolaFlor
 LABEL maintainer="https://dpcalfola.tistory.com/"
 
+ARG USERNAME
+
 ENV PYTHONUNBUFFRED 1
 
 COPY ./requirements.txt /tmp/requirements.txt
@@ -24,8 +26,8 @@ RUN python -m venv /py && \
     adduser \
         --disabled-password \
         --no-create-home \
-        sklifgh4soiasdm1-0xcaskldfh1902
+        $USERNAME
 
 ENV PATH="/py/bin:$PATH"
 
-USER sklifgh4soiasdm1-0xcaskldfh1902
+USER $USERNAME
